@@ -1,0 +1,21 @@
+.inputForm{
+    color:var(--input-bg-color);
+    font-size: 20px;
+}
+.inputText {
+  padding: 5px 20px;
+  margin: 8px 10px;
+  box-sizing: border-box;
+  width: 50%;
+  border: 2px solid var(--input-bg-color);
+  border-radius: 4px;
+}
+.inputSubmit{
+    width: 150px;
+    padding: 5px 20px;
+    border-radius: 15px;
+    background-color: var(--input-bg-color); 
+    border: none;
+    color: white;
+    cursor: pointer;
+}
