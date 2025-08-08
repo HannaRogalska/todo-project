@@ -1,40 +1,23 @@
-import { useEffect, type ChangeEvent, type FormEvent } from "react";
+import { type ChangeEvent, type FormEvent } from "react";
 import style from "./TodoInput.module.css";
 import { useState } from "react";
-interface Task{
-    text: string; 
-    id: number;
+
+interface Props {
+  addTask: (text: string) => void;
 }
-const TodoInput = () => {
-    const [inputValue, setInputValue] = useState('');
-    const [tasks, setTasks] = useState<Task[]>(() => {
-         try {
-           const savedTasks = localStorage.getItem("tasks");
-           return savedTasks ? (JSON.parse(savedTasks) as Task[]) : [];
-         } catch {
-           return [];
-         }
-    });
-    useEffect(() => {
-      localStorage.setItem("tasks", JSON.stringify(tasks));
-    }, [tasks]);
-    const onChangeValue = (e: ChangeEvent<HTMLInputElement>) => {
+const TodoInput = ({ addTask }: Props) => {
+  const [inputValue, setInputValue] = useState("");
+
+  const onChangeValue = (e: ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value);
-    };
-    const handleAddTask = (e: FormEvent<HTMLFormElement>) => {
-      e.preventDefault();
-      if (inputValue.trim() !== "") {
-        const newTask = {
-          text: inputValue,
-          id: Date.now(),
-        };
-          setTasks((prevTasks) => [...prevTasks, newTask]);
-          
-          setInputValue("");
-          
-      }
-      
-    };
+  };
+  const handleAddTask = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (inputValue.trim() !== "") {
+      addTask(inputValue);
+      setInputValue("");
+    }
+  };
   return (
     <form className={style.inputForm} onSubmit={handleAddTask}>
       <label>
