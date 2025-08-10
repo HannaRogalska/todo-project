@@ -1,12 +1,12 @@
 import { useNavigate } from "react-router-dom";
 import style from "./HomePage.module.css";
-import Button from "../../сomponents/Button/Button";
+import Button from "../../components/Button/Button";
 
 const HomePage = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const goToTasks = () => {
-    navigate("./tasks")
+    navigate("./tasks");
   };
   return (
     <div className={style.homePageContainer}>
@@ -23,6 +23,6 @@ const HomePage = () => {
       <Button text="Go to Tasks" btnFunction={goToTasks} />
     </div>
   );
-}
+};
 
-export default HomePage
+export default HomePage;

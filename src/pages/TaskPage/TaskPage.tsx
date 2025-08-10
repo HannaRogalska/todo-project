@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { type Task } from "../../types/Task";
 import localStorageGetTasks from "../../services/localStorageService";
-import TodoInput from '../../сomponents/TodoInput/TodoInput'
-import TodoList from '../../сomponents/TodoList/TodoList';
+import TodoInput from "../../components/TodoInput/TodoInput";
+import TodoList from "../../components/TodoList/TodoList";
 
 const TaskPage = () => {
   const [tasks, setTasks] = useState<Task[]>(() => localStorageGetTasks());
@@ -32,16 +32,16 @@ const TaskPage = () => {
   }, [tasks]);
   console.log(tasks);
 
-    return (
-      <>
-        <TodoInput addTask={addTask} />
-        <TodoList
-          tasks={tasks}
-          toggleCheckBox={toggleCheckBox}
-          deleteTask={deleteTask}
-        />
-      </>
-    );
+  return (
+    <>
+      <TodoInput addTask={addTask} />
+      <TodoList
+        tasks={tasks}
+        toggleCheckBox={toggleCheckBox}
+        deleteTask={deleteTask}
+      />
+    </>
+  );
 };
 
 export default TaskPage;

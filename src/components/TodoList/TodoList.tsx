@@ -27,8 +27,12 @@ const TodoList = ({ tasks, toggleCheckBox, deleteTask }: Props) => {
               >
                 {t.text}
               </p>
-              <input type="checkbox" onChange={handleChange(t.id)} />
-              <Button text="Delate" btnFunction={() => deleteTask(t.id)} />
+              <input
+                type="checkbox"
+                checked={t.isCompleted}
+                onChange={handleChange(t.id)}
+              />
+              <Button text="Delete" btnFunction={() => deleteTask(t.id)} />
             </div>
           </li>
         ))
