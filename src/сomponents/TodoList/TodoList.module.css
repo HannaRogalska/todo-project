@@ -14,17 +14,7 @@
   margin-right: 5px;
   color: var(--input-bg-color);
 }
-.todoItemButton {
-  width: 100px;
-  height: 30px;
-  padding: 2px;
-  margin-left: 10px;
-  border-radius: 15px;
-  background-color: var(--input-bg-color);
-  border: none;
-  color: white;
-  cursor: pointer;
-}
+
 .completed {
   text-decoration: line-through;
   color: grey;

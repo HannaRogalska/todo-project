@@ -1,5 +1,6 @@
 import style from "./TodoList.module.css";
 import type { Task } from "../../types/Task";
+import Button from "../Button/Button";
 interface Props {
   tasks: Task[];
   toggleCheckBox: (id: number, checked: boolean) => void;
@@ -27,12 +28,7 @@ const TodoList = ({ tasks, toggleCheckBox, deleteTask }: Props) => {
                 {t.text}
               </p>
               <input type="checkbox" onChange={handleChange(t.id)} />
-              <button
-                className={style.todoItemButton}
-                onClick={() => deleteTask(t.id)}
-              >
-                Delate
-              </button>
+              <Button text="Delate" btnFunction={() => deleteTask(t.id)} />
             </div>
           </li>
         ))

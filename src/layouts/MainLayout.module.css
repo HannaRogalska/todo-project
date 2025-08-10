@@ -1,0 +1,27 @@
+.mainContainer{
+    height: 500px;
+}
+.mainLayoutHeader{
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+.logoImg{
+    width: 60px;
+    height: 60px;
+    background-color: var(--background-color);
+}
+.mainLayoutNav{
+    padding: 10px;
+    font-size: 20px;
+    
+}
+.mainLayoutNavLink{
+   text-decoration: none;
+   color: var(--input-bg-color) ;
+   padding: 15px;
+}
+.mainLayoutNavLinkIsActive{
+    text-decoration: underline;
+    
+}

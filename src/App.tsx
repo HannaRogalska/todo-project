@@ -1,48 +1,20 @@
 import './App.css'
-import TodoInput from './Components/TodoInput/TodoInput'
-import { useEffect, useState } from "react";
-import { type Task } from "./types/Task";
-import localStorageGetTasks from "./services/localStorageService";
-import TodoList from './Components/TodoList/TodoList';
-
+import { Route, Routes } from "react-router-dom";
+import MainLayout from './layouts/MainLayout';
+import HomePage from "./pages/HomePage/HomePage";
+import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
+import TaskPage from './pages/TaskPage/TaskPage';
 
 function App() {
-  const [tasks, setTasks] = useState<Task[]>(() => localStorageGetTasks());
-
-  const addTask = (text: string) => {
-     const newTask = {
-       text,
-       id: Date.now(),
-       isCompleted: false
-     };
-     setTasks((prevTasks) => [...prevTasks, newTask]);
-  };
-  const toggleCheckBox = (id: number, checked: boolean) => {
-    setTasks((prevTasks) =>
-      prevTasks.map((task) =>
-        task.id === id ? { ...task, isCompleted: checked} : task
-      )
-    );
-  };
-  const deleteTask = (id: number) => {
-
-    const returnTasks = tasks.filter((t) => t.id !== id)
-    console.log(returnTasks);
-    setTasks(returnTasks);
-  }
-  useEffect(() => {
-        localStorage.setItem("tasks", JSON.stringify(tasks));
-      }, [tasks]);
-  console.log(tasks);
-  
   return (
     <>
-      <TodoInput addTask={addTask} />
-      <TodoList
-        tasks={tasks}
-        toggleCheckBox={toggleCheckBox}
-        deleteTask={deleteTask}
-      />
+      <Routes>
+        <Route path="/" element={<MainLayout />}>
+          <Route index element={<HomePage />} />
+          <Route path="/tasks" element={<TaskPage/>} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Route>
+      </Routes>
     </>
   );
 }
