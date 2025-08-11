@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react";
 import { type Task } from "../../types/Task";
-import localStorageGetTasks from "../../services/localStorageService";
+import {
+  localStorageGetTasks,
+  localStorageSetTasks,
+} from "../../services/localStorageService";
 import TodoInput from "../../components/TodoInput/TodoInput";
 import TodoList from "../../components/TodoList/TodoList";
 
 const TaskPage = () => {
   const [tasks, setTasks] = useState<Task[]>(() => localStorageGetTasks());
-
+  const saveTasks = localStorageSetTasks("tasks");
   const addTask = (text: string) => {
     const newTask = {
       text,
@@ -28,9 +31,8 @@ const TaskPage = () => {
     setTasks(returnTasks);
   };
   useEffect(() => {
-    localStorage.setItem("tasks", JSON.stringify(tasks));
+   saveTasks(JSON.stringify(tasks));
   }, [tasks]);
-  console.log(tasks);
 
   return (
     <>

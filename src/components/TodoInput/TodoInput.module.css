@@ -7,8 +7,11 @@
   margin: 8px 10px;
   box-sizing: border-box;
   width: 50%;
+  color: var(--input-bg-color);
+  font-size: 18px;
   border: 2px solid var(--input-bg-color);
   border-radius: 4px;
+  background-color: var(--background-color);
 }
 .inputSubmit {
   width: 150px;
@@ -31,6 +34,7 @@
   }
   .inputText {
     width: 200px;
+
   }
   .inputSubmit {
     width: 80px;
@@ -52,6 +56,7 @@
   }
   .inputText {
     width: 250px;
+    font-size: 12px;
   }
   .inputSubmit {
     width: 80px;
