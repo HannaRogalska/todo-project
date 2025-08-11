@@ -1,5 +1,5 @@
 import { type Task } from "../types/Task"
-const localStorageGetTasks = () => {
+export const localStorageGetTasks = () => {
      try {
                const savedTasks = localStorage.getItem("tasks");
                return savedTasks ? (JSON.parse(savedTasks) as Task[]) : [];
@@ -7,6 +7,16 @@ const localStorageGetTasks = () => {
                return [];
              }
 };
+ 
+export const localStorageSetTasks = (name: string) => {
+  let saveTimeout: ReturnType<typeof setTimeout> | null = null;
+  return (json:string) => {
+    if (saveTimeout) {
+      clearTimeout(saveTimeout);
+    }
+    saveTimeout = setTimeout(() =>localStorage.setItem(name, json), 5000);
+}
+   
+}
 
 
-export default localStorageGetTasks;

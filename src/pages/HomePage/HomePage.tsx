@@ -20,7 +20,7 @@ const HomePage = () => {
         This app uses modern React features including Suspense and React Router
         v6, providing a smooth and fast user experience.
       </p>
-      <Button text="Go to Tasks" btnFunction={goToTasks} />
+      <Button text="Go to" btnFunction={goToTasks} />
     </div>
   );
 };

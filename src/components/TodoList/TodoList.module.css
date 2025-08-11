@@ -29,3 +29,11 @@
   text-align: center;
   padding: 1rem;
 }
+@media screen and (max-width: 400px) {
+  .todoItemText {
+  font-size: 20px;
+}
+.todoList{
+  font-size: 20px;
+}
+}
