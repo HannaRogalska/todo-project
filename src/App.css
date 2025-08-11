@@ -10,4 +10,6 @@
 body{
   margin: 0;
   font-family: "Libertinus Sans", sans-serif;
+  color:var(--input-bg-color);
+  font-size: 25px;
 }

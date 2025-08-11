@@ -20,7 +20,7 @@ const TodoInput = ({ addTask }: Props) => {
   };
   return (
     <form className={style.inputForm} onSubmit={handleAddTask}>
-      <label htmlFor="input">
+      <label htmlFor="input" className={style.inputFormLabel}>
         Create new todo:
         <input
           className={style.inputText}

@@ -2,15 +2,17 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  
 }
 .todoItemBox {
   display: flex;
   padding: 2px;
   align-items: center;
+  
 }
 .todoItemText {
   padding: 2px;
-  font-size: 18px;
+  font-size: 25px;
   margin-right: 5px;
   color: var(--input-bg-color);
 }

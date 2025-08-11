@@ -38,7 +38,7 @@ const MainLayout = () => {
           <Outlet />
         </Suspense>
       </main>
-      <footer>
+      <footer className={style.mainLayoutFooter}>
         <small>© 2025 My App</small>
       </footer>
     </>

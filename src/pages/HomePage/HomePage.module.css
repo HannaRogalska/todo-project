@@ -2,7 +2,16 @@
   padding: 0 16px;
   gap: 15px;
   font-size: 26px;
-  color:var(--input-bg-color);
-  
 }
 
+@media screen and (max-width: 400px) {
+  .homePageContainer {
+  padding: 0 10px;
+  font-size: 15px; 
+}
+}
+@media screen and (min-width: 400px) and (max-width: 700px) {
+  .homePageContainer {
+  padding: 0 10px;
+}
+}
