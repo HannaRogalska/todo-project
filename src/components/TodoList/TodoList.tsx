@@ -1,4 +1,4 @@
-import style from "./TodoList.module.css";
+
 import type { Task } from "../../types/Task";
 import Button from "../Button/Button";
 interface Props {
@@ -15,11 +15,11 @@ const TodoList = ({ tasks, toggleCheckBox, deleteTask }: Props) => {
     };
 
   return (
-    <ol className="list-decimal flex justify-center">
+    <ol className="list-decimal flex flex-col items-center ">
       {tasks && tasks.length !== 0 ? (
         tasks.map((t) => (
           <li key={t.id}>
-            <div className={"flex justify-center items-center"}>
+            <div className={"flex justify-start items-center"}>
               <p
                 className={`${
                   t.isCompleted ? "line-through" : ""
@@ -37,7 +37,7 @@ const TodoList = ({ tasks, toggleCheckBox, deleteTask }: Props) => {
           </li>
         ))
       ) : (
-        <p className={style.emptyMessage}>No tasks available</p>
+        <p>No tasks available</p>
       )}
     </ol>
   );

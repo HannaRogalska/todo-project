@@ -1,44 +1,35 @@
-import style from "./MainLayout.module.css";
 import { NavLink, Outlet } from "react-router-dom";
 import { Suspense } from "react";
 const MainLayout = () => {
   return (
     <>
-      <header className={style.mainLayoutHeader}>
+      <header className={"flex justify-between"}>
         <img
           src="https://cdn-icons-png.freepik.com/256/15158/15158927.png?semt=ais_white_label"
           alt="logo"
-          className={style.logoImg}
+          className={" sm: w-[50px]"}
         />
-        <nav className={style.mainLayoutNav}>
+        <nav className={"flex gap-[10px]"}>
           <NavLink
             to="/"
-            className={({ isActive }) =>
-              isActive
-                ? style.mainLayoutNavLinkIsActive
-                : style.mainLayoutNavLink
-            }
+            className={({ isActive }) => (isActive ? "underline" : "")}
           >
             Home
           </NavLink>
           <NavLink
             to="/tasks"
-            className={({ isActive }) =>
-              isActive
-                ? style.mainLayoutNavLinkIsActive
-                : style.mainLayoutNavLink
-            }
+            className={({ isActive }) => (isActive ? "underline" : "")}
           >
             Tasks
           </NavLink>
         </nav>
       </header>
-      <main className={style.mainContainer}>
+      <main className={"h-[100vh]"}>
         <Suspense fallback={<div>Loading...</div>}>
           <Outlet />
         </Suspense>
       </main>
-      <footer className={style.mainLayoutFooter}>
+      <footer>
         <small>© 2025 My App</small>
       </footer>
     </>
