@@ -22,7 +22,7 @@ npm run dev
 - React
 - TypeScript
 - Vite
-- CSS Modules
+- Tailwind CSS
 
 ---
 
