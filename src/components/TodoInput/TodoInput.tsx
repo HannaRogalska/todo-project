@@ -1,5 +1,4 @@
 import { type ChangeEvent, type FormEvent } from "react";
-import style from "./TodoInput.module.css";
 import { useState } from "react";
 
 interface Props {
@@ -29,7 +28,7 @@ const TodoInput = ({ addTask }: Props) => {
         Create new todo:
         <input
           className={
-            "lg:px-[150px] border-2 m-[10px] border-[var(--input-bg-color)] "
+            "lg:w-[450px] text-start px-[10px]  border-2 m-[10px] border-[var(--input-bg-color)] "
           }
           id="input"
           type="text"
@@ -40,7 +39,7 @@ const TodoInput = ({ addTask }: Props) => {
       </label>
       <input
         className={
-          "border-[var(--input-bg-color)] bg-[var(--input-bg-color)] px-8  text-white rounded-2xl "
+          "border-[var(--input-bg-color)] bg-[var(--input-bg-color)] px-8  text-white rounded-2xl hover:bg-[var(--input-bg-color-hover)]"
         }
         type="submit"
         value="Submit"
