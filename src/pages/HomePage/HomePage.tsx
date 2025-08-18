@@ -9,7 +9,7 @@ const HomePage = () => {
     navigate("./tasks");
   };
   return (
-    <div className={style.homePageContainer}>
+    <div className={"text-2xl flex-col p-[15px] "}>
       <h1>Welcome to Your ToDo App</h1>
       <p>
         Manage your tasks efficiently and stay organized. Add new tasks, track

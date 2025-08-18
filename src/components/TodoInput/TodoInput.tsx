@@ -19,11 +19,18 @@ const TodoInput = ({ addTask }: Props) => {
     }
   };
   return (
-    <form className={style.inputForm} onSubmit={handleAddTask}>
-      <label htmlFor="input" className={style.inputFormLabel}>
+    <form
+      className={
+        "flex-row justify-center p-[20px] sm:flex-column md:flex-column"
+      }
+      onSubmit={handleAddTask}
+    >
+      <label htmlFor="input">
         Create new todo:
         <input
-          className={style.inputText}
+          className={
+            "lg:px-[150px] border-2 m-[10px] border-[var(--input-bg-color)] "
+          }
           id="input"
           type="text"
           name="name"
@@ -31,7 +38,13 @@ const TodoInput = ({ addTask }: Props) => {
           onChange={onChangeValue}
         />
       </label>
-      <input className={style.inputSubmit} type="submit" value="Submit" />
+      <input
+        className={
+          "border-[var(--input-bg-color)] bg-[var(--input-bg-color)] px-8  text-white rounded-2xl "
+        }
+        type="submit"
+        value="Submit"
+      />
     </form>
   );
 };

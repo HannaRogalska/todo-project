@@ -15,15 +15,15 @@ const TodoList = ({ tasks, toggleCheckBox, deleteTask }: Props) => {
     };
 
   return (
-    <ol className={style.todoList}>
+    <ol className="list-decimal flex justify-center">
       {tasks && tasks.length !== 0 ? (
         tasks.map((t) => (
           <li key={t.id}>
-            <div className={style.todoItemBox}>
+            <div className={"flex justify-center items-center"}>
               <p
-                className={`${t.isCompleted ? style.completed : ""} ${
-                  style.todoItemText
-                }`}
+                className={`${
+                  t.isCompleted ? "line-through" : ""
+                } ${"m-[10px]"}`}
               >
                 {t.text}
               </p>
