@@ -1,16 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Libertinus+Sans:ital,wght@0,400;0,700;1,400&family=Playwrite+AU+QLD:wght@100..400&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 #root {
+   margin: 0;
+  font-family: "Libertinus Sans", sans-serif;
+  font-size: 25px;
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
-  background-color: var( --background-color);
-}
-
-body{
-  margin: 0;
-  font-family: "Libertinus Sans", sans-serif;
-  color:var(--input-bg-color);
-  font-size: 25px;
 }
