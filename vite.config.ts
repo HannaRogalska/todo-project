@@ -15,4 +15,8 @@ export default defineConfig({
       reporter: ["text", "html"],
     },
   },
+  build: {
+    outDir: "dist",
+  },
+  base: "/",
 });
