@@ -29,6 +29,7 @@ const MainLayout = () => {
           src="https://cdn-icons-png.freepik.com/256/15158/15158927.png?semt=ais_white_label"
           alt="logo"
           className={" sm: w-[50px]"}
+          loading="lazy"
         />
         <nav className={"flex gap-[10px] "}>
           <NavLink

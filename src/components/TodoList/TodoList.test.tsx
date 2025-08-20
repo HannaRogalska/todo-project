@@ -17,7 +17,6 @@ describe("TodoList", () => {
       />
     );
     const listItem = screen.getAllByRole("listitem");
-    console.log(listItem);
     expect(listItem.length).toBe(tasksMock.length);
     expect(listItem[0]).toBeInTheDocument();
     expect(listItem[1]).toBeInTheDocument();
