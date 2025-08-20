@@ -2,23 +2,22 @@ import { NavLink, Outlet } from "react-router-dom";
 import { Suspense, useState, useEffect } from "react";
 
 const MainLayout = () => {
-  const [darkMode, setDarkMode] = useState<boolean>(false);
+  const savedThemeLocalStorage = localStorage.getItem("theme");
+  const [darkMode, setDarkMode] = useState<boolean>(
+    savedThemeLocalStorage ? JSON.parse(savedThemeLocalStorage) : false
+  );
+
   useEffect(() => {
     if (darkMode) {
       document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "true");
     } else {
       document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "false");
     }
   }, [darkMode]);
-  
 
-  const toggleThem = (): void => {
-    if (darkMode) {
-      setDarkMode(!darkMode);
-    } else {
-      setDarkMode(!darkMode);
-    }
-  };
+  const toggleThem = (): void => setDarkMode(!darkMode);
   return (
     <div
       className={
