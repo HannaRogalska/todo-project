@@ -15,7 +15,6 @@ describe("Button component", () => {
         render(<Button text="Test text" btnFunction={onClick} />);
         const buttonElement = screen.getByRole("button", { name: "Test text" });
         await userEvent.click(buttonElement);
-
         expect(onClick).toHaveBeenCalledTimes(1);
     });
 })

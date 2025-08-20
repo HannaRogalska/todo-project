@@ -11,7 +11,6 @@ const TodoList = ({ tasks, toggleCheckBox, deleteTask }: Props) => {
   const handleChange =
     (id: number) => (e: React.ChangeEvent<HTMLInputElement>) => {
       toggleCheckBox(id, e.target.checked);
-      console.log(e.target.checked);
     };
 
   return (

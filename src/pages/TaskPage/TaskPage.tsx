@@ -27,7 +27,6 @@ const TaskPage = () => {
   };
   const deleteTask = (id: number) => {
     const returnTasks = tasks.filter((t) => t.id !== id);
-    console.log(returnTasks);
     setTasks(returnTasks);
   };
   useEffect(() => {
